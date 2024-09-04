@@ -24,8 +24,3 @@ Se hai suggerimenti su come possiamo migliorare l’accessibilità del nostro si
 Monitoriamo regolarmente l’accessibilità del nostro sito e apportiamo miglioramenti ove necessario. Il nostro impegno è fornire un sito web che sia il più inclusivo possibile per tutti gli utenti.
 
 Grazie per il tuo supporto e la tua comprensione.
-
----
-
-Se hai ulteriori domande o necessiti di assistenza, non esitare a contattarci.
-
