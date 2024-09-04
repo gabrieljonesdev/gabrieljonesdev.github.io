@@ -24,3 +24,30 @@ Se hai suggerimenti su come possiamo migliorare l’accessibilità del nostro si
 Monitoriamo regolarmente l’accessibilità del nostro sito e apportiamo miglioramenti ove necessario. Il nostro impegno è fornire un sito web che sia il più inclusivo possibile per tutti gli utenti.
 
 Grazie per il tuo supporto e la tua comprensione.
+
+
+## Component 
+
+
+```
+<div class="alert alert-success">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M16 8a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM6.93 10.97L4.47 8.53l-.7.7L6.93 12l6.93-6.93-.7-.7-6.23 6.24z"/>
+    </svg>
+    Success! Your operation was successful.
+</div>
+
+<div class="alert alert-warning">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M8 0a8 8 0 1 1-16 0 8 8 0 0 1 16 0zM8 5v4h1V5H8zm0 6v2h1v-2H8z"/>
+    </svg>
+    Warning! Be careful with this action.
+</div>
+
+<div class="alert alert-danger">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+        <path d="M8 1a7 7 0 1 1-7 7 7 7 0 0 1 7-7zm0 1.146a5.854 5.854 0 1 0 5.854 5.854A5.861 5.861 0 0 0 8 2.146zm-.72 3.845a.688.688 0 1 1 .97.97L8.97 8l.72.72a.688.688 0 1 1-.97.97L8 8.97l-.72.72a.688.688 0 1 1-.97-.97L7.03 8l-.72-.72a.688.688 0 1 1 .97-.97L8 7.03l.72-.72z"/>
+    </svg>
+    Danger! Something went wrong.
+</div>
+```
