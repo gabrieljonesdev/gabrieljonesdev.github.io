@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Gabriel Jones</title>
-<link rel="stylesheet" href="/bootstrap-italia/dist/css/bootstrap-italia.min.css" />
+  <title>Gabriel Jones</title>
+  <link rel="stylesheet" href="/bootstrap-italia/dist/css/bootstrap-italia.min.css" />
+  <style>
+    /* Assicurarsi che l'immagine sia ridimensionata automaticamente */
+    .responsive-img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <div class="it-header-slim-wrapper">
         <div class="container-xxl">
           <div class="row">
@@ -57,6 +65,13 @@
                     <span>Seguici su</span>
                     <ul>
                       <li>
+                        <a href="https://www.youtube.com/@gabrieljonesYT/videos" aria-label="Github" target="_blank">
+                          <svg class="icon">
+                            <use href="/bootstrap-italia/dist/svg/sprites.svg#it-youtube"></use>
+                          </svg>
+                        </a>
+                      </li>
+                        <li>
                         <a href="https://github.com/gabrieljonesdev/" aria-label="Github" target="_blank">
                           <svg class="icon">
                             <use href="/bootstrap-italia/dist/svg/sprites.svg#it-github"></use>
@@ -78,11 +93,22 @@
           </div>
         </div>
       </div>
-      <div class="container">
-      <h1>This is a heading</h1>
-      <p>This is a paragraph.</p>
+
+    <!-- Main Content Section -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/600x400" alt="Image Example" class="responsive-img">
+        </div>
+        <div class="col-md-6">
+          <h1>This is a heading</h1>
+          <p>This is a paragraph of text that will appear beside the image. The image will automatically resize to fit the space. You can adjust the content and image accordingly.</p>
+        </div>
       </div>
-      <footer class="it-footer" theme-light>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="it-footer" theme-light>
         <div class="it-footer-main" theme-light>
           <div class="container" theme-light>
             <section>
@@ -159,7 +185,6 @@
         </div>
         <div class="it-footer-small-prints clearfix">
           <div class="container">
-            <!-- <h3 class="visually-hidden">Sezione Link Utili</h3> -->
             <ul class="it-footer-small-prints-list list-inline mb-0 d-flex flex-column flex-md-row">
               <li class="list-inline-item"><a href="/stampa/">Note stampa</a></li>
               <li class="list-inline-item"><a href="/trasparenza/">trasparenza</a></li>
