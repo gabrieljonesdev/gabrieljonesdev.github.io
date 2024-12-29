@@ -87,44 +87,7 @@
         </div>
       </div>
 
-    <!-- Main Content Section -->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img src="https://via.placeholder.com/600x400" alt="Image Example" class="responsive-img">
-        </div>
-        <div class="col-md-6">
-          <h1>Chi Sono</h1>
-          <p>Mi chiamo Gabriel Jones e sono un appassionato di contenuti digitali, politiche giovanili e cultura. Nel mio tempo libero creo video su YouTube e Instagram, dove parlo di temi importanti come l'impegno civico, la politica giovanile e le opportunità per i giovani.</p>
-        </div>
-      </div>
-
-      <!-- Sezione YouTube e Instagram -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <h2>I miei Video su YouTube</h2>
-          <p>Ogni settimana pubblico video su YouTube dove esploro tematiche relative al mondo dei giovani e alle politiche giovanili. Puoi trovare i miei video <a href="https://www.youtube.com/@gabrieljonesYT/videos" target="_blank">qui sul mio canale</a>.</p>
-        </div>
-      </div>
-
-      <!-- Sezione Politiche Giovanili -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <h2>Politiche Giovanili e Impegno Civico</h2>
-          <p>Mi dedico anche a fare proposte per il comune, cercando di migliorare la vita dei giovani nella mia comunità. In particolare, mi concentro su temi come l'educazione, il lavoro giovanile e l'inclusione sociale. Con il mio impegno, cerco di portare avanti iniziative che possano avere un impatto positivo.</p>
-          <p>Puoi scoprire di più su questi progetti <a href="/trasparenza/">qui</a>.</p>
-        </div>
-      </div>
-
-      <!-- Sezione Lavoro in Biblioteca -->
-      <div class="row mt-5">
-        <div class="col-12">
-          <h2>Il Mio Lavoro in Biblioteca</h2>
-          <p>Oltre al mio impegno nelle politiche giovanili, lavoro anche come bibliotecario. Mi occupo di curare eventi culturali, supportare lettori e studenti e promuovere la cultura attraverso attività interattive. Credo che la biblioteca sia un luogo fondamentale di crescita e confronto.</p>
-          <p>Scopri di più sulle attività in biblioteca <a href="/documenti/">qui</a>.</p>
-        </div>
-      </div>
-    </div>
+    <div class="featured-video" id="featuredVideoContainer"></div>
 
     <!-- Footer Section -->
     <footer class="it-footer" theme-light>
@@ -212,5 +175,87 @@
           </div>
         </div>
       </footer>
+    <script>
+        const API_KEY = 'AIzaSyDmtuEqJYNjXgJ-xO0UEZcJf0UXHmKjB4o'; // Chiave API aggiornata
+        const CHANNEL_ID = 'UCpw7_ePKCUF28v1JypU0RNw'; // ID del canale
+
+        async function fetchVideos() {
+            try {
+                const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=10`);
+                const data = await response.json();
+                console.log(data); // Debug: vedere la struttura dei dati
+                return data.items;
+            } catch (error) {
+                console.error("Errore durante il fetch dei video:", error);
+                return [];
+            }
+        }
+
+        function createFeaturedVideoElement(videoId) {
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'featured-video';
+
+            videoDiv.innerHTML = `
+                <iframe src="https://www.youtube.com/embed/${videoId}" allowfullscreen></iframe>
+            `;
+
+            return videoDiv;
+        }
+
+        function createVideoElement(video) {
+            const videoDiv = document.createElement('div');
+            videoDiv.className = 'video';
+
+            const videoId = video.id.videoId;
+            videoDiv.innerHTML = `
+                <img src="${video.snippet.thumbnails.high.url}" alt="${video.snippet.title}">
+                <p>${video.snippet.title}</p>
+            `;
+            videoDiv.addEventListener('click', () => openPopup(videoId));
+
+            return videoDiv;
+        }
+
+        function openPopup(videoId) {
+            const popupOverlay = document.getElementById('popupOverlay');
+            const videoPopup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+
+            popupVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`; // Avvia automaticamente
+            popupOverlay.style.display = 'block';
+            videoPopup.style.display = 'block';
+        }
+
+        function closePopup() {
+            const popupOverlay = document.getElementById('popupOverlay');
+            const videoPopup = document.getElementById('videoPopup');
+            const popupVideo = document.getElementById('popupVideo');
+
+            popupVideo.src = ''; // Ferma il video
+            popupOverlay.style.display = 'none';
+            videoPopup.style.display = 'none';
+        }
+
+        async function displayVideos() {
+            const videos = await fetchVideos();
+            const featuredVideoContainer = document.getElementById('featuredVideoContainer');
+            const videoContainer = document.getElementById('videoContainer');
+
+            if (videos && videos.length > 0) {
+                // Mostra il primo video in evidenza
+                const featuredVideoElement = createFeaturedVideoElement(videos[0].id.videoId);
+                featuredVideoContainer.appendChild(featuredVideoElement);
+
+                // Mostra gli altri video
+                videos.slice(1).forEach(video => {
+                    const videoElement = createVideoElement(video);
+                    videoContainer.appendChild(videoElement);
+                });
+            }
+        }
+
+        displayVideos();
+    </script>
+
 </body>
 </html>
