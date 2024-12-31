@@ -5,30 +5,79 @@
   <link rel="stylesheet" href="/bootstrap-italia/dist/css/bootstrap-italia.min.css" />
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
-<body>
-<div class="it-header-center-wrapper theme-light">
-  <div class="container-xxl">
-    <div class="row">
-      <div class="col-12">
-        <div class="it-header-center-content-wrapper">
-          <div class="it-brand-wrapper">
-            <a href="https://online.upid.it/dipartimenti/centrale/">
-              <svg class="icon" aria-hidden="true">
-                <use href="/bootstrap-italia/dist/svg/sprites.svg#it-info-circle"></use>
-              </svg>
-              <div class="it-brand-text">
-                <div class="it-brand-title">UPID</div>
-                <div class="it-brand-tagline d-none d-md-block">L'unione del futuro</div>
+<body><header class="it-header-wrapper">
+  <div class="it-header-slim-wrapper">
+    <div class="container-xxl">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-slim-wrapper-content">
+            <a class="d-none d-lg-block navbar-brand" href="#">Ente appartenenza</a>
+            <div class="nav-mobile">
+              <nav aria-label="Navigazione secondaria">
+                <a class="it-opener d-lg-none" data-bs-toggle="collapse" href="#menuC1" role="button" aria-expanded="false" aria-controls="menuC1">
+                  <span>Ente appartenenza</span>
+                  <svg class="icon" aria-hidden="true"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                </a>
+                <div class="link-list-wrapper collapse" id="menuC1">
+                  <ul class="link-list">
+                    <li><a class="dropdown-item list-item" href="#">Link 1</a></li>
+                    <li><a class="list-item active" href="#" aria-current="page">Link 2 (Attivo)</a></li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div class="it-header-slim-right-zone">
+              <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="visually-hidden">Selezione lingua: lingua selezionata</span>
+                  <span>ITA</span>
+                  <svg class="icon d-none d-lg-block"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-expand"></use></svg>
+                </a>
+                <div class="dropdown-menu">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="link-list-wrapper">
+                        <ul class="link-list">
+                          <li><a class="dropdown-item list-item" href="#"><span>ITA <span class="visually-hidden">selezionata</span></span></a></li>
+                          <li><a class="dropdown-item list-item" href="#"><span>ENG</span></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </a>
+              <div class="it-access-top-wrapper">
+                <a class="btn btn-primary btn-sm" href="#">Accedi</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="it-nav-wrapper">
+    <div class="it-header-center-wrapper">
+      <div class="container-xxl">
+        <div class="row">
+          <div class="col-12">
+            <div class="it-header-center-content-wrapper">
+              <div class="it-brand-wrapper">
+                <a href="#">
+                  <svg class="icon" aria-hidden="true"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-user"></use></svg>
+                  <div class="it-brand-text">
+                    <div class="it-brand-title">UPID</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-
+  
   <main id="main-container" class="main-container coloreScuola">
     <section class="section bg-coloreScuola py-3 py-lg-3 py-xl-5">
         <div class="container">
@@ -96,38 +145,15 @@
                         <div class="row variable-gutters mb-4">
                             <div class="col-lg-12">
                                 <div class="card-deck card-deck-spaced">
-                                    <div class="card card-bg card-icon rounded">
-                                        <div class="card-body">
-                                            <svg class="icon it-pdf-document">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/bootstrap-italia/dist/svg/sprites.svg#it-tool"></use>
-                                            </svg>
-                                            <div class="card-icon-content">
-                                                <p>
-                                                    <strong>
-                                                        <a href="https://icfontanafredda.edu.it/struttura/ic-fontanafredda/">
-                                                            IC FONTANAFREDDA "RITA LEVI-MONTALCINI"
-                                                        </a>
-                                                    </strong>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="card card-bg card-icon rounded">
-                                        <div class="card-body">
-                                            <svg class="icon it-pdf-document">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/bootstrap-italia/dist/svg/sprites.svg#it-tool"></use>
-                                            </svg>
-                                            <div class="card-icon-content">
-                                                <p>
-                                                    <strong>
-                                                        <a href="https://icfontanafredda.edu.it/struttura/amministrazione-segreteria/">
-                                                            Amministrazione-Segreteria
-                                                        </a>
-                                                    </strong>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  <div class="container">
+                                    <h1>About</h1>
+                                    <p>No text</p>
+                                    <h3>social</h3>
+                                      <a href="https://www.instagram.com/tuo_profilo/" target="_blank" class="btn btn-outline-dark d-flex align-items-center">
+                                        <i class="bi bi-instagram me-2"></i>
+                                        <span>Instagram</span>
+                                      </a>
+                                  </div>
                                 </div>
                             </div>
                         </div>
